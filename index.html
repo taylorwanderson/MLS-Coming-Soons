@@ -1,46 +1,55 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MLS Coming Soon Policies — National Reference</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-.wrap{padding:1rem 0;font-family:var(--font-sans,sans-serif)}
-h2{font-size:18px;font-weight:500;color:var(--color-text-primary);margin-bottom:4px}
-.subtitle{font-size:13px;color:var(--color-text-secondary);margin-bottom:1rem}
-.stats-bar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:1rem}
-.stat{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:8px 14px;font-size:12px;color:var(--color-text-secondary)}
-.stat strong{font-size:16px;font-weight:500;color:var(--color-text-primary);display:block}
-.filters{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1rem}
-.filter-btn{font-size:11.5px;padding:4px 10px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);background:transparent;color:var(--color-text-secondary);cursor:pointer}
-.filter-btn.active{background:var(--color-background-info);color:var(--color-text-info);border-color:var(--color-border-info)}
-.legend{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:1rem}
-.legend-item{display:flex;align-items:center;gap:5px;font-size:11.5px;color:var(--color-text-secondary)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#fff;color:#111;padding:1.5rem}
+h2{font-size:22px;font-weight:600;margin-bottom:6px}
+.subtitle{font-size:14px;color:#555;margin-bottom:1.2rem}
+.stats-bar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:1.2rem}
+.stat{background:#f4f4f4;border-radius:8px;padding:10px 16px;font-size:13px;color:#555}
+.stat strong{font-size:18px;font-weight:600;color:#111;display:block}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.2rem}
+.filter-btn{font-size:12px;padding:5px 12px;border-radius:8px;border:1px solid #ccc;background:#fff;color:#555;cursor:pointer;transition:all .15s}
+.filter-btn:hover{background:#f0f0f0}
+.filter-btn.active{background:#dbeafe;color:#1d4ed8;border-color:#93c5fd}
+.legend{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:1.2rem}
+.legend-item{display:flex;align-items:center;gap:5px;font-size:12px;color:#555}
 .dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
-.dot-yes{background:#639922}.dot-no{background:#E24B4A}.dot-partial{background:#EF9F27}.dot-na{background:#888780}
+.dot-yes{background:#3a7d11}.dot-no{background:#c0392b}.dot-partial{background:#d97706}.dot-na{background:#888}
 table{width:100%;border-collapse:collapse;font-size:12px}
-thead th{font-size:10.5px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.04em;padding:6px 7px;border-bottom:0.5px solid var(--color-border-primary);text-align:left;background:var(--color-background-secondary);position:sticky;top:0;z-index:1}
-tbody tr{border-bottom:0.5px solid var(--color-border-tertiary);cursor:pointer}
-tbody tr:hover{background:var(--color-background-secondary)}
+thead th{font-size:10px;font-weight:600;color:#555;text-transform:uppercase;letter-spacing:.05em;padding:7px 8px;border-bottom:2px solid #ddd;text-align:left;background:#f9f9f9;position:sticky;top:0;z-index:1}
+tbody tr{border-bottom:1px solid #eee;cursor:pointer;transition:background .1s}
+tbody tr:hover{background:#fafafa}
 tbody tr.hidden{display:none}
-tbody tr.expanded{background:var(--color-background-secondary)}
-td{padding:7px 7px;vertical-align:top;color:var(--color-text-primary)}
-td.mls-name{font-weight:500;font-size:12.5px}
-td.mls-region{color:var(--color-text-secondary);font-size:11px}
-.badge{display:inline-block;padding:2px 6px;border-radius:10px;font-size:10.5px;font-weight:500;white-space:nowrap}
-.badge-yes{background:#EAF3DE;color:#3B6D11}.badge-no{background:#FCEBEB;color:#A32D2D}
-.badge-partial{background:#FAEEDA;color:#854F0B}.badge-na{background:#F1EFE8;color:#5F5E5A}
-.detail-row td{padding:10px 7px 14px 7px;color:var(--color-text-secondary);font-size:12px;line-height:1.6;border-top:none}
-.detail-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:7px;margin-top:8px}
-.detail-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:7px 9px}
-.detail-card-label{font-size:9.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--color-text-tertiary);margin-bottom:3px}
-.detail-card-value{font-size:12px;color:var(--color-text-primary)}
-.expand-icon{float:right;font-size:13px;color:var(--color-text-tertiary);transition:transform .2s}
+tbody tr.expanded{background:#fafafa}
+td{padding:8px 8px;vertical-align:top;color:#111}
+td.mls-name{font-weight:600;font-size:13px}
+td.mls-region{color:#666;font-size:11px}
+.badge{display:inline-block;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap}
+.badge-yes{background:#dcfce7;color:#166534}
+.badge-no{background:#fee2e2;color:#991b1b}
+.badge-partial{background:#fef3c7;color:#92400e}
+.badge-na{background:#f3f4f6;color:#4b5563}
+.detail-row td{padding:12px 8px 16px 8px;color:#555;font-size:12px;line-height:1.7;border-top:none;background:#fafafa}
+.detail-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:8px;margin-top:10px}
+.detail-card{background:#fff;border:1px solid #e5e7eb;border-radius:8px;padding:8px 10px}
+.detail-card-label{font-size:9px;text-transform:uppercase;letter-spacing:.06em;color:#9ca3af;margin-bottom:3px}
+.detail-card-value{font-size:12px;color:#111}
+.expand-icon{float:right;font-size:13px;color:#aaa;transition:transform .2s}
 .expanded .expand-icon{transform:rotate(180deg)}
-@media(prefers-color-scheme:dark){
-  .badge-yes{background:#27500A;color:#C0DD97}.badge-no{background:#501313;color:#F7C1C1}
-  .badge-partial{background:#412402;color:#FAC775}.badge-na{background:#2C2C2A;color:#B4B2A9}
+@media(max-width:700px){
+  table{font-size:11px}
+  .detail-grid{grid-template-columns:1fr}
 }
 </style>
-<div class="wrap">
+</head>
+<body>
 <h2>MLS Coming Soon policies — national reference</h2>
-<p class="subtitle">37 MLSs · ~81% of NAR members · Click any row to expand details</p>
+<p class="subtitle">37 MLSs &middot; ~81% of NAR members &middot; Click any row to expand details</p>
 <div class="stats-bar">
   <div class="stat"><strong id="totalMLS">37</strong> MLSs covered</div>
   <div class="stat"><strong id="totalSubs">~1,210,000</strong> Subscribers covered</div>
@@ -57,50 +66,56 @@ td.mls-region{color:var(--color-text-secondary);font-size:11px}
   <button class="filter-btn" data-filter="idx-yes">CS in IDX/portals</button>
 </div>
 <div class="legend">
-  <div class="legend-item"><div class="dot dot-yes"></div>Yes/allowed</div>
-  <div class="legend-item"><div class="dot dot-no"></div>No/not allowed</div>
-  <div class="legend-item"><div class="dot dot-partial"></div>Partial/conditional</div>
+  <div class="legend-item"><div class="dot dot-yes"></div>Yes / allowed</div>
+  <div class="legend-item"><div class="dot dot-no"></div>No / not allowed</div>
+  <div class="legend-item"><div class="dot dot-partial"></div>Partial / conditional</div>
   <div class="legend-item"><div class="dot dot-na"></div>N/A</div>
 </div>
 <div style="overflow-x:auto">
 <table>
 <thead><tr>
-  <th style="min-width:130px">MLS</th><th style="min-width:80px">Region</th><th style="min-width:55px">~Subs</th>
-  <th style="min-width:55px">CS Status</th><th style="min-width:60px">Max duration</th>
-  <th style="min-width:55px">Showings</th><th style="min-width:55px">Open houses</th>
-  <th style="min-width:55px">Public mktg</th><th style="min-width:55px">IDX/portals</th><th style="min-width:50px">DOM paused</th>
+  <th style="min-width:130px">MLS</th>
+  <th style="min-width:80px">Region</th>
+  <th style="min-width:55px">~Subs</th>
+  <th style="min-width:55px">CS Status</th>
+  <th style="min-width:65px">Max duration</th>
+  <th style="min-width:60px">Showings</th>
+  <th style="min-width:60px">Open houses</th>
+  <th style="min-width:60px">Public mktg</th>
+  <th style="min-width:60px">IDX/portals</th>
+  <th style="min-width:55px">DOM paused</th>
 </tr></thead>
 <tbody id="tableBody"></tbody>
 </table>
 </div>
-</div>
+
 <script>
-const mlsData=[
+var mlsData=[
 {n:"CRMLS",r:"West (CA)",rt:"west",s:108000,sz:"108,000",cs:true,max:"21 days*",sh:false,oh:false,pm:true,idx:"yes",dom:true,stag:"no",idxt:"idx-yes",
  sn:"No showings under any circumstances — including virtual (per official FAQ, updated Jun 30, 2021)",
- iN:"CS now included in IDX as of March 10, 2026 (listings entered on/after that date appear on public portals). Previously excluded from listing distribution feeds but included in IDX/VOW.",
- mN:"Full public marketing allowed; must clearly label as 'Coming Soon.' Marketing via social media, flyers, signs all permitted.",
- ex:"Declined NAR DMEL policy. New Construction Listings exempt from 21-day limit (remain in CS until certificate of occupancy). Visible to all MLS and data-share partners. CRMLS is the largest MLS in the U.S. at ~108K subscribers."},
+ iN:"CS now included in IDX as of March 10, 2026. Previously excluded from listing distribution feeds but included in IDX/VOW.",
+ mN:"Full public marketing allowed; must clearly label as 'Coming Soon.' Signs, flyers, social media all permitted.",
+ ex:"Declined NAR DMEL policy. New Construction Listings exempt from 21-day limit (remain in CS until certificate of occupancy). Visible to all MLS and data-share partners. Largest MLS in the U.S. at ~108K subscribers."},
 {n:"Bright MLS",r:"Mid-Atlantic",rt:"northeast",s:100000,sz:"100,000",cs:true,max:"No time limit",sh:false,oh:false,pm:true,idx:"partial",dom:true,stag:"no",idxt:"",
  sn:"No showings, tours, or open houses for any subscriber including listing office (per rules effective Aug 14, 2024)",
- iN:"CS visibility in IDX/portal syndication is controlled via an 'Internet' sharing toggle. Default distribution behavior requires direct confirmation with Bright MLS.",
+ iN:"CS visibility in IDX/portal syndication controlled via an 'Internet' sharing toggle. Bright removed the time limit on CS listings.",
  mN:"Marketing allowed with Coming Soon label. Has had an 'Internet No' option for decades, effectively enabling MLOS-style delayed marketing long before the NAR policy.",
- ex:"Written seller authorization required. If an offer is received during CS, must be presented to seller. Bright removed the time limit on CS listings. Rules effective Aug 14, 2024."},
+ ex:"Written seller authorization required. If an offer is received during CS, must be presented to seller. Rules effective Aug 14, 2024."},
 {n:"Stellar MLS (FL)",r:"South (FL)",rt:"south",s:84000,sz:"84,000",cs:true,max:"Seller-directed",sh:true,oh:true,pm:true,idx:"partial",dom:false,stag:"showings-ok",idxt:"",
- sn:"Showings and open houses ARE permitted — Stellar's delayed distribution model keeps the listing Active and fully visible to all agents; only external IDX/portal syndication is blocked during the delay period",
- iN:"Delayed distribution only applies to external syndication via IDX and Realtor.com. The listing is Active on-MLS and visible to all participants during the delay. Implementation targeted Sept 2025.",
- mN:"Marketing permitted; seller signed disclosure required. This is NOT a traditional Coming Soon off-market status — the listing is Active and agents can show and market it normally.",
- ex:"Stellar's approach is unique: listings are entered as Active in the MLS and visible to all agents, but IDX/portal distribution is temporarily blocked per seller direction. This differs from a traditional CS status where the listing is off-market."},
+ sn:"Showings and open houses ARE permitted — Stellar's model keeps the listing Active and fully visible to all agents; only external IDX/portal syndication is blocked during the delay period.",
+ iN:"Delayed distribution only applies to external syndication via IDX and Realtor.com. Listing is Active on-MLS and visible to all participants during delay. Implementation targeted Sept 2025.",
+ mN:"Marketing permitted; seller signed disclosure required. This is NOT a traditional off-market Coming Soon — the listing is Active and agents can show and market it normally.",
+ ex:"Stellar's approach is unique: listings are entered as Active in the MLS and visible to all agents, but IDX/portal distribution is temporarily blocked per seller direction."},
 {n:"FMLS (Atlanta)",r:"South (GA)",rt:"south",s:55000,sz:"55,000",cs:true,max:"30 days",sh:false,oh:false,pm:false,idx:"no",dom:true,stag:"no",idxt:"",
- sn:"Showings are prohibited during CS period; ShowingTime is blocked",
+ sn:"Showings prohibited during CS period; ShowingTime is blocked",
  iN:"NOT on public websites; viewable only by FMLS members. Listing broker/agent websites and social media may include CS listings subject to advertising rules.",
  mN:"No broad public marketing — CS is an off-market, members-only status. Automatic change to Active at midnight at end of CS period.",
- ex:"4th largest MLS in North America, serving ~55K agents in GA/AL. CS limited to 30 days (confirmed by official FMLS knowledgebase). Requires seller permission. Once Active, cannot revert to CS."},
+ ex:"4th largest MLS in North America, serving ~55K agents in GA/AL. CS limited to 30 days per official FMLS knowledgebase. Requires seller permission. Once Active, cannot revert to CS."},
 {n:"GaMLS (Georgia)",r:"South (GA)",rt:"south",s:40000,sz:"40,000",cs:true,max:"21 days",sh:false,oh:false,pm:false,idx:"no",dom:true,stag:"no",idxt:"",
  sn:"No showings before On Market Date (per GAMLS Rules & Regulations, Rev. Aug 1, 2024)",
  iN:"Not visible on public websites; only available to GAMLS members. Back-office feed excludes CS listings.",
  mN:"Activation date required within 21 days",
- ex:"Georgia's largest statewide MLS (~40K members). Partner of FMLS in Atlanta; together they cover most of GA. Once Active, cannot revert to CS. Rules revision marker: R08012024."},
+ ex:"Georgia's largest statewide MLS (~40K members). Partner of FMLS in Atlanta. Once Active, cannot revert to CS. Rules revision marker: R08012024."},
 {n:"HAR (Houston)",r:"South (TX)",rt:"south",s:50000,sz:"50,000",cs:true,max:"21 days",sh:false,oh:false,pm:true,idx:"no",dom:true,stag:"no",idxt:"",
  sn:"No showings; listings auto-go Active (not Withdrawn) after 21 days",
  iN:"Visible to MLS subscribers only via Matrix and HAR agent mobile app; not on HAR.com public search; not syndicated to public portals",
@@ -110,17 +125,17 @@ const mlsData=[
  sn:"Private listings visible only to all MLS subscribers within the MRED system",
  iN:"NOT in IDX distribution feeds; visible to all ~48K MRED subscribers only",
  mN:"Marketing to subscribers allowed. MRED launched its Private Listing Network in 2016 — predating NAR's DMEL policy.",
- ex:"Unique 'Private Listing Network' since 2016. Must enter within 24 hrs of public advertising / 48 hrs of list date. All subscribers have equal access. If closed while Private, must move to Standard for comp use."},
+ ex:"Unique 'Private Listing Network' since 2016. Must enter within 24 hrs of public advertising / 48 hrs of list date. All subscribers have equal access."},
 {n:"SEFMLS (MIAMI)",r:"South (FL)",rt:"south",s:60000,sz:"60,000",cs:true,max:"Existing limit",sh:false,oh:false,pm:true,idx:"partial",dom:true,stag:"no",idxt:"",
  sn:"Subject to existing SEFMLS rules; also has an 'Active – Display on Internet N' option",
  iN:"Existing distribution rules apply; chose minimal changes rather than adopting full NAR DMEL",
- mN:"Seller Authorization Form required within 2 business days of listing agreement. Seller disclosure required for both CS and Office Exclusive listings.",
+ mN:"Seller Authorization Form required within 2 business days of listing agreement.",
  ex:"SEFMLS chose minimal updates rather than full NAR DMEL adoption. New Seller Authorization Form went live Oct 14, 2025. Largest MLS in South Florida at ~60K members."},
 {n:"NTREIS (Dallas–FW)",r:"South (TX)",rt:"south",s:40000,sz:"40,000",cs:true,max:"30 days",sh:true,oh:false,pm:true,idx:"no",dom:true,stag:"showings-ok",idxt:"",
  sn:"Showings at seller's choice — a 'Showing Allowed' Y/N field is required; seller can permit or block showings",
  iN:"NOT in public data feeds (Realtor.com, Zillow); visible to MLS subscribers; can be included in client communications",
  mN:"Public marketing allowed; CS functions as NAR's DMEL concept. Board-approved changes effective Sept 29, 2025.",
- ex:"~40K subscribers across 48,000 sq mi of North Texas including Dallas, Fort Worth, Denton. Auto-moves to Active after 30 days. CDOM picks up prior CS listing if relisted within 31 days."},
+ ex:"~40K subscribers across 48,000 sq mi of North Texas including Dallas, Fort Worth, Denton. Auto-moves to Active after 30 days."},
 {n:"OneKey MLS (NY)",r:"Northeast (NY)",rt:"northeast",s:45000,sz:"45,000",cs:true,max:"14 days",sh:false,oh:false,pm:true,idx:"yes",dom:true,stag:"no",idxt:"idx-yes",
  sn:"No showings by ANYONE — including the listing agent and office",
  iN:"In MLS system, IDX websites, and mobile app; NOT syndicated to Realtor.com and similar portals",
@@ -135,17 +150,17 @@ const mlsData=[
  sn:"No showings by anyone during 'Preview Time'; no broker-only open houses. No offers can be presented during CS period.",
  iN:"CS fed to broker/agent IDX sites AND Realtor.com. Can be included in auto-emails. Expected Active Date capped at 14 days from list date.",
  mN:"Marketing and signs allowed; at least 1 exterior photo required. Cancelling CS and relisting as Active before activation date results in automatic fine.",
- ex:"Uses 'Preview Time' terminology. Serves all 20K+ real estate professionals in Connecticut. Last updated Feb 2, 2026 (per official status definitions page)."},
+ ex:"Uses 'Preview Time' terminology. Serves all 20K+ real estate professionals in Connecticut. Last updated Feb 2, 2026."},
 {n:"Realcomp (Michigan)",r:"Midwest (MI)",rt:"midwest",s:17000,sz:"17,000",cs:true,max:"5 business days",sh:false,oh:false,pm:true,idx:"yes",dom:false,stag:"no",idxt:"idx-yes",
  sn:"No showings during CS period; showings can be scheduled for on/after activation date",
- iN:"YES — included in IDX, RETS, and API feeds; must display CS label + activation date or 'not available for showings until activation date' notice (per policy effective Jul 1, 2021)",
+ iN:"YES — included in IDX, RETS, and API feeds; must display CS label + activation date or 'not available for showings until activation date' notice (policy effective Jul 1, 2021)",
  mN:"Can be in auto-emails, individual emails, and client portal",
  ex:"DOM begins from LIST DATE (not activation date) — unusual among all major MLSs. Shortest traditional CS window: 5 business days. Must remain Active for minimum 24 hrs before any further status change."},
 {n:"NorthstarMLS (MN)",r:"Midwest (MN/WI)",rt:"midwest",s:20000,sz:"20,000",cs:true,max:"21 days",sh:false,oh:false,pm:true,idx:"partial",dom:true,stag:"no",idxt:"",
  sn:"No showings — $1,000 fine for violation",
  iN:"CS distributed to broker and agent IDX/Broker Reciprocity websites, but NOT distributed to third-party portals such as Realtor.com, Zillow, or Homes.com (per official CS PDF, Rev. May 2025)",
  mN:"Marketing, signs, yard signs allowed. Price changes during CS are tracked and available for display.",
- ex:"Seller must sign CS Authorization Form. Cannot re-list in CS unless off market 90+ days, new brokerage, or sold. This is a key correction from earlier: CS is in broker/agent IDX but NOT in third-party portals."},
+ ex:"Seller must sign CS Authorization Form. Cannot re-list in CS unless off market 90+ days, new brokerage, or sold. CS is in broker/agent IDX but NOT in third-party portals."},
 {n:"Heartland MLS (KC)",r:"Midwest (KS/MO)",rt:"midwest",s:12000,sz:"12,000",cs:true,max:"Unspecified",sh:false,oh:false,pm:true,idx:"yes",dom:true,stag:"no",idxt:"idx-yes",
  sn:"No showings during CS; ActivationDate is when showings begin",
  iN:"CS included in IDX/VOW since June 2025; Activate Date required on public display. InternetListing field defaults to Yes (can be set to No). Also adopted NAR DMEL in Oct 2025.",
@@ -155,7 +170,7 @@ const mlsData=[
  sn:"Showings and open houses are NOT permitted while a listing is in CS status (per MARIS status guide, last updated 12/5/2025)",
  iN:"CS listings distribute to brokerage IDX/VOW feeds AND third-party syndication by default, unless 'Publish to Internet' is set to No. Auto-switches to Active after 21 days or Expected Active Date.",
  mN:"Public marketing IS allowed once in CS status",
- ex:"~16K members, 14 associations, 52 counties in MO and IL. Also has Office Exclusive option (DOM doesn't accrue; not in any feeds; only 1-to-1 communications). Key correction: showings are prohibited and CS is in IDX by default."},
+ ex:"~16K members, 14 associations, 52 counties in MO and IL. Also has Office Exclusive option (DOM doesn't accrue; not in any feeds; only 1-to-1 communications)."},
 {n:"PrimeMLS (New England)",r:"Northeast (NH/VT/ME/MA/RI/CT/NY)",rt:"northeast",s:12000,sz:"12,000",cs:true,max:"10 days",sh:false,oh:false,pm:true,idx:"yes",dom:true,stag:"no",idxt:"idx-yes",
  sn:"No showings during CS period",
  iN:"CS can be syndicated and shared via IDX. 'Internet No' option available as alternative with signed seller disclosure.",
@@ -165,22 +180,22 @@ const mlsData=[
  sn:"N/A — no CS status; all listings must be entered by the next calendar day",
  iN:"N/A — all active listings fully distributed to all participants and the public",
  mN:"No delayed marketing; all listed properties must be publicly marketed immediately",
- ex:"Non-NAR-affiliated MLS — not subject to NAR policies. WA SB 6091 (effective June 2026) legally requires broad public marketing. In federal litigation with Compass over their 3-phase marketing (CS/Private Exclusive) strategy."},
+ ex:"Non-NAR-affiliated MLS. WA SB 6091 (effective June 2026) legally requires broad public marketing. In federal litigation with Compass over their 3-phase marketing strategy."},
 {n:"REcolorado",r:"West (CO)",rt:"west",s:25000,sz:"25,000",cs:true,max:"7 days",sh:false,oh:false,pm:true,idx:"partial",dom:true,stag:"no",idxt:"",
  sn:"Zero showings — broker showings, virtual showings, open houses, and virtual open houses all prohibited",
  iN:"Not detailed in public-facing rules; agents should confirm current IDX distribution directly with REcolorado",
  mN:"Allowed; yard signs must include 'Coming Soon' rider. Expected Active Date must be within 7 days.",
- ex:"Shortest traditional CS window of any major MLS at 7 days. System auto-moves listing to Active after 7 days. Seller can set Expected Active Date within the 7-day window. (Per FAQ page, Jul 19, 2022.)"},
+ ex:"Shortest traditional CS window of any major MLS at 7 days. System auto-moves listing to Active after 7 days. (Per FAQ page, Jul 19, 2022.)"},
 {n:"RMLS (Portland)",r:"West (OR)",rt:"west",s:12000,sz:"12,000",cs:true,max:"21 days",sh:false,oh:false,pm:false,idx:"no",dom:true,stag:"no",idxt:"",
  sn:"No showings during Coming Soon-No Showing (CSN) status",
- iN:"NOT in IDX, syndication, or social media; NOT on any public sites; sharing is limited strictly to broker's own clients, current customers, and active RMLS subscribers",
+ iN:"NOT in IDX, syndication, or social media; sharing limited strictly to broker's own clients, current customers, and active RMLS subscribers",
  mN:"Most restrictive marketing rules of any MLS in this guide: NO print ads, NO internet display, NO syndication, NO social media during CSN",
- ex:"One of most restrictive CS marketing policies in the country. Fine up to $1,500 for CCP violations. Cannot re-enter CSN after withdrawal."},
+ ex:"Fine up to $1,500 for CCP violations. Cannot re-enter CSN after withdrawal."},
 {n:"UtahRealEstate.com",r:"West (UT)",rt:"west",s:20000,sz:"20,000",cs:false,max:"N/A",sh:"n/a",oh:"n/a",pm:false,idx:"n/a",dom:"n/a",stag:"no-cs",idxt:"",
  sn:"N/A — uses 'Active-No Show' status instead of Coming Soon (per clearcooperation page, Feb 1, 2020)",
  iN:"Active-No Show listings are in the MLS; DOM does not accrue while in that status",
- mN:"No formal CS status. Public marketing triggers mandatory MLS entry within 1 business day as Active or Active-No Show.",
- ex:"Alternative: 'Active-No Show' (no DOM accrual, yard signs allowed, no outside marketing). Property must be available for showings within 5 business days of going Active, or must move to Active-No Show."},
+ mN:"No formal CS status. Public marketing triggers mandatory MLS entry within 1 business day.",
+ ex:"Alternative: 'Active-No Show' (no DOM accrual, yard signs allowed, no outside marketing). Property must be available for showings within 5 business days of going Active."},
 {n:"UnlockMLS/ABoR (Austin)",r:"South (TX)",rt:"south",s:18000,sz:"18,000",cs:true,max:"Unspecified",sh:false,oh:false,pm:true,idx:"no",dom:true,stag:"no",idxt:"",
  sn:"No showings during CS period; CS listings not shared in data feed with partner MLSs",
  iN:"CS NOT included in any data feeds, IDX, VOW, or syndication; not shared with data share partners including SABOR",
@@ -188,9 +203,9 @@ const mlsData=[
  ex:"ABoR serves 18K+ members across 18 Central Texas counties. CS listings explicitly kept separate from SABOR and HAR data shares."},
 {n:"CVR MLS (Richmond, VA)",r:"South (VA)",rt:"south",s:10000,sz:"~10,000",cs:true,max:"45 days",sh:false,oh:false,pm:true,idx:"no",dom:true,stag:"no",idxt:"",
  sn:"No showings — must change listing to Active status before any showing; ShowingTime can pre-schedule showings for after Active date",
- iN:"NOT in IDX or public-facing data feeds; only available to Virginia MLS Cooperative Participants and authorized data share partners (per Rules & Regulations, updated Jan 2025; CS window expanded to 45 days, Jul 2025)",
+ iN:"NOT in IDX or public-facing data feeds; only available to Virginia MLS Cooperative Participants and authorized data share partners (Rules updated Jan 2025; CS window expanded to 45 days Jul 2025)",
  mN:"Pre-Marketing Addendum (CVR 150) required; public marketing allowed with CS designation",
- ex:"Longest CS window of any MLS in this guide at 45 days (expanded from 21 days in July 2025). Cannot extend past 45 days. Cannot revert to CS unless off market 90+ days. CS cannot go back to CS once it goes Active with the same listing."},
+ ex:"Longest CS window of any MLS in this guide at 45 days (expanded from 21 days in July 2025). Cannot extend past 45 days. Cannot revert to CS unless off market 90+ days."},
 {n:"SDMLS",r:"West (CA)",rt:"west",s:22000,sz:"22,000",cs:true,max:"No stated max",sh:true,oh:false,pm:true,idx:"no",dom:true,stag:"showings-ok",idxt:"",
  sn:"Individual broker-to-client appointments ARE permitted; showing services enabled in MLS (per updated policy, July 2025). Earlier 2022 rules prohibited showings — July 2025 update supersedes.",
  iN:"NOT in public portals or IDX feeds; available in VOW and Broker Back Office (BBO) feeds limited to listing brokerage's own data only",
@@ -198,9 +213,9 @@ const mlsData=[
  ex:"Single-use per listing — cannot return to CS after going Active. Seller Authorization Form (Appendix F) required. DOM resets when transitioning to Active."},
 {n:"Bay East MLS",r:"West (CA)",rt:"west",s:6000,sz:"6,000",cs:true,max:"30 days",sh:true,oh:false,pm:true,idx:"no",dom:true,stag:"showings-ok",idxt:"",
  sn:"Agent showings by appointment ARE allowed (seller controls; must be stated in Confidential Remarks)",
- iN:"NOT in IDX or public data feeds; included in broker back-office data feed on request. Not included in public websites. Auto-cancel after 30 days (effective March 30 update).",
+ iN:"NOT in IDX or public data feeds; included in broker back-office data feed on request. Not on public websites. Auto-cancel after 30 days.",
  mN:"Public marketing allowed once in CS status. Confidential Remarks must clearly state whether showings are permitted or not.",
- ex:"Requires signed listing agreement. Cannot revert to CS after going Active with same broker. Photos optional. Part of NorCal Cross-Pollination Agreement with MetroList, CRMLS, BAREIS, MLSListings, SFAR, and BridgeMLS."},
+ ex:"Requires signed listing agreement. Cannot revert to CS after going Active with same broker. Part of NorCal Cross-Pollination Agreement with MetroList, CRMLS, BAREIS, MLSListings, SFAR, and BridgeMLS."},
 {n:"BeachesMLS (S. FL)",r:"South (FL)",rt:"south",s:10000,sz:"10,000",cs:true,max:"21 days",sh:false,oh:false,pm:true,idx:"partial",dom:true,stag:"no",idxt:"",
  sn:"No showings during delayed marketing/CS period",
  iN:"CS listings excluded from IDX during delayed marketing period",
@@ -210,22 +225,22 @@ const mlsData=[
  sn:"No showings in CS No-Show status",
  iN:"Coming Soon No-Show syndicates to broker IDX and VOW websites and mobile apps, but NOT to Realtor.com, Homes.com, or ListHub sites",
  mN:"Marketing allowed; price history suppressed during CS No-Show. Did NOT adopt NAR DMEL.",
- ex:"Created own 'Limited Exposure' and 'Firm Exclusive' options independently of NAR DMEL. Modified CS No-Show to suppress price history. Once Active, only the newest price is visible; future changes tracked from there."},
+ ex:"Created own 'Limited Exposure' and 'Firm Exclusive' options independently of NAR DMEL. Modified CS No-Show to suppress price history."},
 {n:"Doorify MLS (NC)",r:"South (NC)",rt:"south",s:10000,sz:"10,000",cs:true,max:"30 days",sh:false,oh:false,pm:true,idx:"partial",dom:true,stag:"no",idxt:"",
  sn:"No showings or open houses; estate sales and yard sales also prohibited during CS",
  iN:"Distribution details not fully specified in public-facing rules; confirm with Doorify MLS",
  mN:"Public marketing with CS designation. 'Coming Soon/Hold' form must be uploaded as attachment to the MLS listing.",
- ex:"After 30 days, automatically defaults to Active. Serves the Raleigh–Durham–Chapel Hill area and beyond in NC."},
+ ex:"After 30 days, automatically defaults to Active. Serves the Raleigh-Durham-Chapel Hill area and beyond in NC."},
 {n:"GLVAR/LVR (Las Vegas)",r:"West (NV)",rt:"west",s:17000,sz:"17,000",cs:true,max:"30 days",sh:true,oh:false,pm:true,idx:"no",dom:true,stag:"showings-ok",idxt:"",
  sn:"Showings and offers at seller's discretion during CS period",
  iN:"NOT visible on public websites during CS; visible to agents and brokers on MLS only",
  mN:"At least one photo required; On Market Date required; Coming Soon Listing Addendum required",
- ex:"Las Vegas REALTORS® MLS (formerly GLVAR), ~17K members. 30-day CS window with seller-controlled showings and offers."},
+ ex:"Las Vegas REALTORS MLS (formerly GLVAR), ~17K members. 30-day CS window with seller-controlled showings and offers."},
 {n:"MLSSAZ (Tucson)",r:"West (AZ)",rt:"west",s:5000,sz:"5,000",cs:true,max:"30 days",sh:true,oh:false,pm:true,idx:"no",dom:true,stag:"showings-ok",idxt:"",
  sn:"Showings explicitly permitted at seller's direction (per Coming Soon Status Guide, adopted May 2020)",
  iN:"NOT distributed through IDX/Broker Reciprocity and NOT included in syndication feeds. Can be emailed per-listing basis; does not support automatic email notifications while in CS.",
  mN:"Full public marketing allowed",
- ex:"MLS of Southern Arizona (Tucson area). 30-day CS window with seller-directed showings — one of few MLSs explicitly permitting both. DOM resets when transitioning to Active."},
+ ex:"MLS of Southern Arizona (Tucson). 30-day CS window with seller-directed showings. DOM resets when transitioning to Active."},
 {n:"YES MLS (NE Ohio)",r:"Midwest (OH)",rt:"midwest",s:15000,sz:"15,000",cs:true,max:"On Market Date",sh:false,oh:false,pm:true,idx:"yes",dom:true,stag:"no",idxt:"idx-yes",
  sn:"No showings — $1,000 fine (1st offense); $2,000 + ethics complaint (2nd). Showings will NOT commence during the CS time period.",
  iN:"YES — CS included in IDX, RETS, and APIs with CS status and activation date labeled (confirmed in official PDF)",
@@ -250,17 +265,17 @@ const mlsData=[
  sn:"No showings, broker previews, or open houses during CS",
  iN:"CS listings may appear in IDX, syndication, and VOW at listing broker's discretion",
  mN:"Public marketing allowed only if clearly labeled 'Coming Soon'; 'Coming Soon' rider required on any public signs; at least one photo required",
- ex:"Southwest MLS (Albuquerque/New Mexico). Offers four seller pathways: Active, Coming Soon, Delayed IDX/Syndication, and Office Exclusive. CS converts to Active on day 15. Cannot return to CS until Expired/Cancelled for 30+ days. Seller disclosure required for exempt listings."},
+ ex:"Southwest MLS (Albuquerque/New Mexico). Four seller pathways: Active, Coming Soon, Delayed IDX/Syndication, and Office Exclusive. CS converts to Active on day 15. Cannot return to CS until Expired/Cancelled for 30+ days."},
 {n:"MetroList (Sacramento)",r:"West (CA)",rt:"west",s:25000,sz:"25,000",cs:true,max:"Unspecified",sh:true,oh:false,pm:true,idx:"no",dom:true,stag:"showings-ok",idxt:"",
- sn:"Showings are seller-controlled — Confidential Remarks must state whether showings are permitted. If permitted, listing agent must show and must allow showings by any subscriber equally.",
+ sn:"Showings are seller-controlled — Confidential Remarks must state whether showings are permitted. If permitted, listing agent must allow showings by ANY subscriber equally.",
  iN:"NOT in public IDX/syndication during CS period; included in NorCal Cross-Pollination data share with Bay East, CRMLS, BAREIS, MLSListings, SFAR, and BridgeMLS",
  mN:"May market only as 'Coming Soon' off the MLS; no other off-MLS public marketing permitted",
- ex:"MetroList (Sacramento) serves ~25K professionals across Sacramento, Placer, El Dorado, Yolo, San Joaquin, Stanislaus, Merced counties. Equal-access rule: if showings are permitted, ALL subscribers must have equal access, not just listing brokerage clients."},
+ ex:"Serves ~25K professionals across Sacramento, Placer, El Dorado, Yolo, San Joaquin, Stanislaus, Merced counties. Equal-access rule: if showings are permitted, ALL subscribers must have equal access."},
 {n:"SABOR (San Antonio)",r:"South (TX)",rt:"south",s:13000,sz:"13,000",cs:true,max:"Unspecified",sh:false,oh:false,pm:true,idx:"no",dom:true,stag:"no",idxt:"",
  sn:"CS listings not shown publicly; must be Active for showings",
  iN:"CS NOT included in any data feeds, IDX, VOW, or syndication; not shared with Unlock MLS data share",
  mN:"CCP applies — public marketing requires MLS entry within 1 business day",
- ex:"Has data share agreement with Unlock MLS (Austin) but CS listings are explicitly kept separate. Data share guide (Dec 2024) confirms: 'Unlock will not import or display our MLS's private listings, nor will SABOR display Unlock's MLS coming soon listings.'"},
+ ex:"Has data share agreement with Unlock MLS (Austin) but CS listings are explicitly kept separate. Data share guide (Dec 2024): 'Unlock will not import or display our MLS's private listings, nor will SABOR display Unlock's MLS coming soon listings.'"},
 ];
 
 function badge(v,t){
@@ -278,34 +293,37 @@ function badge(v,t){
   }
 }
 
-const tbody=document.getElementById('tableBody');
-let expanded=null;
+var tbody=document.getElementById('tableBody');
+var expanded=null;
 
-mlsData.forEach((m)=>{
-  const tr=document.createElement('tr');
+mlsData.forEach(function(m){
+  var tr=document.createElement('tr');
   tr.dataset.region=m.rt;
   tr.dataset.showings=m.stag;
   tr.dataset.hascs=m.cs?'yes':'no';
   tr.dataset.idxt=m.idxt||'';
-  tr.innerHTML=`<td class="mls-name">${m.n} <span class="expand-icon">▾</span></td>
-    <td class="mls-region">${m.r}</td>
-    <td style="font-size:11.5px;color:var(--color-text-secondary)">${m.sz}</td>
-    <td>${m.cs?'<span class="badge badge-yes">Yes</span>':'<span class="badge badge-no">No CS</span>'}</td>
-    <td style="font-size:11px;color:var(--color-text-secondary)">${m.max}</td>
-    <td>${badge(m.sh,'bool')}</td><td>${badge(m.oh,'bool')}</td>
-    <td>${badge(m.pm,'bool')}</td><td>${badge(m.idx,'idx')}</td><td>${badge(m.dom,'bool')}</td>`;
-  const dt=document.createElement('tr');
+  tr.innerHTML='<td class="mls-name">'+m.n+' <span class="expand-icon">&#9662;</span></td>'
+    +'<td class="mls-region">'+m.r+'</td>'
+    +'<td style="font-size:11.5px;color:#666">'+m.sz+'</td>'
+    +'<td>'+(m.cs?'<span class="badge badge-yes">Yes</span>':'<span class="badge badge-no">No CS</span>')+'</td>'
+    +'<td style="font-size:11px;color:#666">'+m.max+'</td>'
+    +'<td>'+badge(m.sh,'bool')+'</td>'
+    +'<td>'+badge(m.oh,'bool')+'</td>'
+    +'<td>'+badge(m.pm,'bool')+'</td>'
+    +'<td>'+badge(m.idx,'idx')+'</td>'
+    +'<td>'+badge(m.dom,'bool')+'</td>';
+  var dt=document.createElement('tr');
   dt.classList.add('detail-row');
   dt.style.display='none';
-  dt.innerHTML=`<td colspan="10"><div class="detail-grid">
-    <div class="detail-card"><div class="detail-card-label">Approx. subscribers</div><div class="detail-card-value">${m.sz}</div></div>
-    <div class="detail-card"><div class="detail-card-label">Showings detail</div><div class="detail-card-value">${m.sn}</div></div>
-    <div class="detail-card"><div class="detail-card-label">IDX / syndication</div><div class="detail-card-value">${m.iN}</div></div>
-    <div class="detail-card"><div class="detail-card-label">Marketing rules</div><div class="detail-card-value">${m.mN}</div></div>
-    <div class="detail-card" style="grid-column:1/-1"><div class="detail-card-label">Notes & key distinctions</div><div class="detail-card-value">${m.ex}</div></div>
-  </div></td>`;
-  tr.addEventListener('click',()=>{
-    const o=dt.style.display!=='none';
+  dt.innerHTML='<td colspan="10"><div class="detail-grid">'
+    +'<div class="detail-card"><div class="detail-card-label">Approx. subscribers</div><div class="detail-card-value">'+m.sz+'</div></div>'
+    +'<div class="detail-card"><div class="detail-card-label">Showings detail</div><div class="detail-card-value">'+m.sn+'</div></div>'
+    +'<div class="detail-card"><div class="detail-card-label">IDX / syndication</div><div class="detail-card-value">'+m.iN+'</div></div>'
+    +'<div class="detail-card"><div class="detail-card-label">Marketing rules</div><div class="detail-card-value">'+m.mN+'</div></div>'
+    +'<div class="detail-card" style="grid-column:1/-1"><div class="detail-card-label">Notes & key distinctions</div><div class="detail-card-value">'+m.ex+'</div></div>'
+    +'</div></td>';
+  tr.addEventListener('click',function(){
+    var o=dt.style.display!=='none';
     if(expanded&&expanded!==dt){expanded.style.display='none';expanded.previousElementSibling.classList.remove('expanded');}
     dt.style.display=o?'none':'table-row';
     tr.classList.toggle('expanded',!o);
@@ -315,16 +333,16 @@ mlsData.forEach((m)=>{
   tbody.appendChild(dt);
 });
 
-document.getElementById('filters').addEventListener('click',e=>{
+document.getElementById('filters').addEventListener('click',function(e){
   if(!e.target.classList.contains('filter-btn')) return;
-  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active');});
   e.target.classList.add('active');
-  const f=e.target.dataset.filter;
-  const rows=tbody.querySelectorAll('tr:not(.detail-row)');
-  let cnt=0,subs=0,i=0;
-  rows.forEach(row=>{
-    const dr=row.nextElementSibling;
-    let show=true;
+  var f=e.target.dataset.filter;
+  var rows=tbody.querySelectorAll('tr:not(.detail-row)');
+  var cnt=0,subs=0,i=0;
+  rows.forEach(function(row){
+    var dr=row.nextElementSibling;
+    var show=true;
     if(f==='west') show=row.dataset.region==='west';
     else if(f==='south') show=row.dataset.region==='south';
     else if(f==='midwest') show=row.dataset.region==='midwest';
@@ -343,3 +361,5 @@ document.getElementById('filters').addEventListener('click',e=>{
   document.getElementById('pctCoverage').textContent=f==='all'?'~81%':'~'+Math.round(subs/1500000*100)+'%';
 });
 </script>
+</body>
+</html>

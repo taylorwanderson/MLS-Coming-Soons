@@ -287,4 +287,79 @@ function badge(v,t){
   }
   if(t==='idx'){
     if(v==='yes') return '<span class="badge badge-yes">Yes</span>';
-    if(
+    if(v==='no') return '<span class="badge badge-no">No</span>';
+    if(v==='n/a') return '<span class="badge badge-na">N/A</span>';
+    return '<span class="badge badge-partial">Partial</span>';
+  }
+}
+
+var tbody=document.getElementById('tableBody');
+var expanded=null;
+
+mlsData.forEach(function(m){
+  var tr=document.createElement('tr');
+  tr.dataset.region=m.rt;
+  tr.dataset.showings=m.stag;
+  tr.dataset.hascs=m.cs?'yes':'no';
+  tr.dataset.idxt=m.idxt||'';
+  tr.innerHTML='<td class="mls-name">'+m.n+' <span class="expand-icon">&#9662;</span></td>'
+    +'<td class="mls-region">'+m.r+'</td>'
+    +'<td style="font-size:11.5px;color:#666">'+m.sz+'</td>'
+    +'<td>'+(m.cs?'<span class="badge badge-yes">Yes</span>':'<span class="badge badge-no">No CS</span>')+'</td>'
+    +'<td style="font-size:11px;color:#666">'+m.max+'</td>'
+    +'<td>'+badge(m.sh,'bool')+'</td>'
+    +'<td>'+badge(m.oh,'bool')+'</td>'
+    +'<td>'+badge(m.pm,'bool')+'</td>'
+    +'<td>'+badge(m.idx,'idx')+'</td>'
+    +'<td>'+badge(m.dom,'bool')+'</td>';
+  var dt=document.createElement('tr');
+  dt.classList.add('detail-row');
+  dt.style.display='none';
+  dt.innerHTML='<td colspan="10"><div class="detail-grid">'
+    +'<div class="detail-card"><div class="detail-card-label">Approx. subscribers</div><div class="detail-card-value">'+m.sz+'</div></div>'
+    +'<div class="detail-card"><div class="detail-card-label">Showings detail</div><div class="detail-card-value">'+m.sn+'</div></div>'
+    +'<div class="detail-card"><div class="detail-card-label">IDX / syndication</div><div class="detail-card-value">'+m.iN+'</div></div>'
+    +'<div class="detail-card"><div class="detail-card-label">Marketing rules</div><div class="detail-card-value">'+m.mN+'</div></div>'
+    +'<div class="detail-card" style="grid-column:1/-1"><div class="detail-card-label">Notes & key distinctions</div><div class="detail-card-value">'+m.ex+'</div></div>'
+    +'</div></td>';
+  tr.addEventListener('click',function(){
+    var o=dt.style.display!=='none';
+    if(expanded&&expanded!==dt){expanded.style.display='none';expanded.previousElementSibling.classList.remove('expanded');}
+    dt.style.display=o?'none':'table-row';
+    tr.classList.toggle('expanded',!o);
+    expanded=o?null:dt;
+  });
+  tbody.appendChild(tr);
+  tbody.appendChild(dt);
+});
+
+document.getElementById('filters').addEventListener('click',function(e){
+  if(!e.target.classList.contains('filter-btn')) return;
+  document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active');});
+  e.target.classList.add('active');
+  var f=e.target.dataset.filter;
+  var rows=tbody.querySelectorAll('tr:not(.detail-row)');
+  var cnt=0,subs=0,i=0;
+  rows.forEach(function(row){
+    var dr=row.nextElementSibling;
+    var show=true;
+    if(f==='west') show=row.dataset.region==='west';
+    else if(f==='south') show=row.dataset.region==='south';
+    else if(f==='midwest') show=row.dataset.region==='midwest';
+    else if(f==='northeast') show=row.dataset.region==='northeast';
+    else if(f==='showings-ok') show=row.dataset.showings==='showings-ok';
+    else if(f==='no-cs') show=row.dataset.hascs==='no';
+    else if(f==='idx-yes') show=row.dataset.idxt==='idx-yes';
+    row.classList.toggle('hidden',!show);
+    dr.style.display='none';
+    row.classList.remove('expanded');
+    if(show){cnt++;subs+=mlsData[i]?mlsData[i].s:0;}
+    i++;
+  });
+  document.getElementById('totalMLS').textContent=f==='all'?mlsData.length:cnt;
+  document.getElementById('totalSubs').textContent=f==='all'?'~1,210,000':'~'+subs.toLocaleString();
+  document.getElementById('pctCoverage').textContent=f==='all'?'~81%':'~'+Math.round(subs/1500000*100)+'%';
+});
+</script>
+</body>
+</html>
